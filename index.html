@@ -1,15 +1,410 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CADTalk</title>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="CADTalk: An Algorithm and Benchmark for Semantic Commenting of CAD Programs">
+    <meta name="keywords" content="CADTalk, CADTalker, CAD, Program, Segmentation, Labeling, Annotation, Dataset">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CADTalk: An Algorithm and Benchmark for Semantic Commenting of CAD Programs</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="./resources/css/bulma.min.css">
+    <link rel="stylesheet" href="./resources/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./resources/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./resources/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./resources/css/index.css">
+    <link rel="icon" href="./resources/imgs/icon.png">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./resources/js/fontawesome.all.min.js"></script>
+    <script src="./resources/js/bulma-carousel.min.js"></script>
+    <script src="./resources/js/bulma-slider.min.js"></script>
+    <script src="./resources/js/index.js"></script>
 </head>
+
 <body>
-    <div>
-        <h1>test for site, update later</h1>
-    </div>
+
+    <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+            <a class="navbar-item" href="https://keunhong.com">
+            <span class="icon">
+                <i class="fas fa-home"></i>
+            </span>
+            </a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                More Research
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="https://hypernerf.github.io">
+                  HyperNeRF
+                </a>
+                <a class="navbar-item" href="https://nerfies.github.io">
+                  Nerfies
+                </a>
+                <a class="navbar-item" href="https://latentfusion.github.io">
+                  LatentFusion
+                </a>
+                <a class="navbar-item" href="https://photoshape.github.io">
+                  PhotoShape
+                </a>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+    </nav> -->
+
+    <!-- Title, authors -->
+    <section class="hero">
+        <div class="hero-body">
+          <div class="container is-max-desktop">
+            <div class="columns is-centered">
+              <div class="column has-text-centered">
+                <h1 class="title is-1 publication-title">CADTalk: An Algorithm and Benchmark for Semantic Commenting of CAD Programs</h1>
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block">
+                    <a href="https://yyyyyhc.github.io/">Haocheng Yuan</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                    Jing Xu<sup>1</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://haopan.github.io/">Hao Pan</a><sup>2</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www-sop.inria.fr/members/Adrien.Bousseau/">Adrien Bousseau</a><sup>3</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="http://www0.cs.ucl.ac.uk/staff/n.mitra/">Niloy J. Mitra</a><sup>4,5</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://enigma-li.github.io/">Changjian Li</a><sup>1</sup>
+                  </span>
+                </div>
+      
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block"><sup>1</sup>University of Edinburgh,</span>
+                  <span class="author-block"><sup>2</sup>Microsoft Research Asia,</span>
+                  <span class="author-block"><sup>3</sup>Inria, Université Côte d'Azur,</span> <br>
+                  <span class="author-block"><sup>4</sup>University College London,</span>
+                  <span class="author-block"><sup>5</sup>Adobe Research</span>
+                </div>
+      
+                <div class="column has-text-centered">
+                  <div class="publication-links">
+                    <!-- PDF Link. -->
+                    <span class="link-block">
+                      <a href="https://arxiv.org/pdf/2311.16703.pdf"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+                    <span class="link-block">
+                      <a href="https://arxiv.org/abs/2311.16703"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                      </a>
+                    </span>
+                    <!-- Video Link. -->
+                    <!-- <span class="link-block">
+                      <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fab fa-youtube"></i>
+                        </span>
+                        <span>Video</span>
+                      </a>
+                    </span> -->
+                    <!-- Code Link. -->
+                    <span class="link-block">
+                      <a href=""
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code [Coming soon]</span>
+                        </a>
+                    </span>
+                    <!-- Dataset Link. -->
+                    <span class="link-block">
+                      <a href=""
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fas fa-download"></i>
+                        </span>
+                        <span>Dataset [Coming soon]</span>
+                        </a>
+                    </span>
+                    <!-- Sippl. Link. -->
+                    <span class="link-block">
+                      <a href=""
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fas fa-folder"></i>
+                        </span>
+                        <span>Suppl.</span>
+                      </a>
+                    </span>
+
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     
+    <!-- Teaser -->
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+            <img src="./resources/imgs/teaser.png" class="teaser" alt="Teaser Image"/>
+            <h3 class="subtitle has-text-justified">
+                Given a CAD program as input, our algorithm – CADTalker – automatically generates 
+                comments before each code blocks to describe the shape part that is generated 
+                by the block (left). We evaluate our algorithm on a new dataset of commented 
+                CAD programs – CADTalk – that contains both human-made and machine-made CAD programs (right).
+            </h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Results -->
+    <section class="hero is-light is-small"> 
+        <div class="hero-body">
+          <div class="container">
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item item-bike">
+                <video poster="" id="bike" autoplay controls muted loop playsinline height="100%">
+                  <source src="./resources/videos/bike.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-frog">
+                <video poster="" id="frog" autoplay controls muted loop playsinline height="100%">
+                  <source src="./resources/videos/frog.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-ship">
+                <video poster="" id="ship" autoplay controls muted loop playsinline height="100%">
+                  <source src="./resources/videos/ship.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-snowman">
+                <video poster="" id="snowman" autoplay controls muted loop playsinline height="100%">
+                  <source src="./resources/videos/snowman.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-train">
+                <video poster="" id="train" autoplay controls muted loop playsinline height="100%">
+                  <source src="./resources/videos/train.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-tux">
+                <video poster="" id="tux" autoplay controls muted loop playsinline height="100%">
+                  <source src="./resources/videos/tux.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Abstract and Paper Video -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <!-- Abstract. -->
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                        CAD programs are a popular way to compactly encode shapes as a sequence of operations 
+                        that are easy to parametrically modify.  However, without sufficient semantic comments 
+                        and structure, such programs can be challenging to understand, let alone modify. 
+                        We introduce the problem of semantic commenting CAD programs, wherein the goal is to 
+                        segment the input program into code blocks corresponding to semantically meaningful 
+                        shape parts and assign a semantic label to each block.
+                        We solve the problem by combining program parsing with visual-semantic analysis 
+                        afforded by recent advances in foundational language and vision models. 
+                        Specifically, by executing the input programs, we create shapes, which we use to 
+                        generate conditional photorealistic images to make use of semantic annotators for 
+                        such images. We then distill the information across the images and link back to 
+                        the original programs to semantically comment on them. 
+                        Additionally, we collected and annotated a benchmark dataset, CADTalk, 
+                        consisting of 5,280 machine-made programs and 45 human-made programs with ground truth 
+                        semantic comments to foster future research.
+                        We extensively evaluated our approach, compared to a GPT-based baseline approach, 
+                        and an open-set shape segmentation baseline, i.e., PartSLIP, and report an 83.24% accuracy
+                        on the new CADTalk dataset.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+        
+            <!-- Paper video. -->
+            <!-- <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Video</h2>
+                <div class="publication-video">
+                <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+            </div> -->
+            <!--/ Paper video. -->
+        </div>
+    </section>
+
+    <!-- Method -->
+    <section class="section">
+        <div class="container is-max-desktop">
+
+            <!-- Overview -->
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3 has-text-centered">Method</h2>
+                    <img src="./resources/imgs/method.png" class="" alt="Method Image"/>
+                    <div class="content has-text-justified">
+                        <p>
+                            Figure 1. <b>Overview.</b> We first parse the input program to 
+                            identify commentable code blocks, marked with TBC (a). 
+                            We then execute the program and render the resulting shape under several
+                            viewpoints to obtain multiview depth maps, which we convert into realistic
+                            images using image-to-image translation (b). 
+                            In addition, we obtain a list of part names of the shape from ChatGPT. 
+                            We use these labels to segment semantic parts in the images using 
+                            computer vision foundation models (c). 
+                            Finally, we aggregate this semantic information across views by linking it 
+                            to code blocks that correspond to the segmented parts (d).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="columns is-centered has-text-centered">
+
+                <!-- Segmentation. -->
+                <div class="column">
+                    <div class="content">
+                    <h3 class="title is-4">Image Generation and Segmentation</h3>
+                    <img src="./resources/imgs/image_processing.png" class="is-centered" alt="Processing Image"/>
+                    <div class="content has-text-justified">
+                    <p>
+                        <b>Image Processing.</b> Given shapes (left) after executing programs, we use ControlNet to convert
+                        rendered depth maps into realistic images (middle), which form a valid input
+                        for detection and segmentation models trained on photographs (right).
+                    </p>
+                    </div>
+                    </div>
+                </div>
+                <!--/ Segmentation. -->
+            
+                <!-- Block. -->
+                <div class="column">
+                    <div class="content">
+                    <h3 class="title is-4">Program Parsing</h3>
+                        <img src="./resources/imgs/blocks.png" class="is-centered" alt="Program Parsing"/>
+                        <div class="content has-text-justified">
+                        <p>
+                        <b>Program parsing.</b> Irreducible blocks are basic-level geometric primitives and their direct
+                            compositions (a), 
+                            while commentable blocks are code blocks of different compositional levels that correspond to semantic
+                            comments (b). 
+                        The downward traversal of the syntax tree is used to identify irreducible blocks (c) 
+                        and the upward traversal to collect commentable blocks (d). 
+                        Exemplar masks of commentable blocks are shown in (c) and (d) rendered in red color.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                <!--/ Block. -->
+
+                </div>
+
+        </div>
+    </section>
+    
+    <!-- Results -->
+    <section class="section">
+        <div class="container is-max-desktop">
+
+            <!-- Overview -->
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3 has-text-centered">Result Gallery</h2>
+                    <img src="./resources/imgs/gallery.png" class="" alt="Results Gallery"/>
+                    <div class="content has-text-justified">
+                        <p>
+                            <b>CADTalk Dataset and Commenting Results.</b> Example shapes from CADTalk (left) along with 
+                            ground-truth (right) and predicted comments (far right). 
+                            In these examples, our prediction matches the ground truth, except for the Moai sculpture where
+                             CADTalker labeled the 'head' code block as 'body'. Machine-made shapes are rendered with 
+                             dark blue and placed behind the human-made shapes rendered with light blue.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Citation -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+          <h2 class="title">BibTeX</h2>
+          <pre><code>@article{yuan2023cadtalk,
+        author    = {Haocheng, Yuan and Jing, Xu and Hao, Pan and Adrien, Bousseau and Niloy, Mitra and Changjian, Li},
+        title     = {CADTalk: An Algorithm and Benchmark for Semantic Commenting of CAD Programs},
+        journal   = {arXiv preprint arXiv:2311.16703},
+        year      = {2023},
+      }</code></pre>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <div class="content">
+                <p>
+                    We borrow the source code of this website from  <a
+                    href="https://nerfies.github.io/">Nerfies</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+
 </body>
 </html>
