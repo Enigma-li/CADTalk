@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="CADTalk: An Algorithm and Benchmark for Semantic Commenting of CAD Programs">
+    <meta name="keywords" content="CADTalk, CADTalker, CAD, Program, Segmentation, Labeling, Annotation, Dataset">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CADTalk: An Algorithm and Benchmark for Semantic Commenting of CAD Programs</title>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/bulma.min.css">
+    <link rel="stylesheet" href="./css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="icon" href="./imgs/icon.png">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./js/fontawesome.all.min.js"></script>
+    <script src="./js/bulma-carousel.min.js"></script>
+    <script src="./js/bulma-slider.min.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+            <a class="navbar-item" href="https://enigma-li.github.io/" target="_blank">
+            <span class="icon">
+                <i class="fas fa-home"></i>
+            </span>
+            </a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                More Links
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="https://enigma-li.github.io/CADTalk/" target="_blank">
+                  CADTalk Project Home
+                </a>
+                <a class="navbar-item" href="https://yyyyyhc.github.io/" target="_blank">
+                  Haocheng's Homepage
+                </a>
+                <a class="navbar-item" href="https://enigma-li.github.io/" target="_blank">
+                  Changjian's Homepage
+                </a>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+    </nav>
+
+    <!-- Title, authors -->
+    <section class="hero">
+        <div class="hero-body">
+          <div class="container is-max-desktop">
+            <div class="columns is-centered">
+              <div class="column has-text-centered">
+                <h1 class="title is-1 publication-title">CADTalk: The Benchmark Dataset</h1>
+                <h3 class="title is-4" style="color: red">CVPR 2024</h3>
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block">
+                    <a href="https://yyyyyhc.github.io/" target="_blank">Haocheng Yuan</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                    Jing Xu<sup>1</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://haopan.github.io/" target="_blank">Hao Pan</a><sup>2</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www-sop.inria.fr/members/Adrien.Bousseau/" target="_blank">Adrien Bousseau</a><sup>3,6</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="http://www0.cs.ucl.ac.uk/staff/n.mitra/" target="_blank">Niloy J. Mitra</a><sup>4,5</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://enigma-li.github.io/" target="_blank">Changjian Li</a><sup>1</sup>
+                  </span>
+                </div>
+      
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block"><sup>1</sup>University of Edinburgh,</span>
+                  <span class="author-block"><sup>2</sup>Microsoft Research Asia,</span>
+                  <span class="author-block"><sup>3</sup>Inria, Université Côte d'Azur,</span> <br>
+                  <span class="author-block"><sup>4</sup>University College London,</span>
+                  <span class="author-block"><sup>5</sup>Adobe Research</span>
+                  <span class="author-block"><sup>6</sup>Delft University of Technology</span>
+                </div>
+                <div class="column has-text-centered">
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    <!-- The Dataset Visualization -->
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+            <img src="./imgs/gallery.png" class="teaser" alt="Teaser Image"/>
+            <h3 class="subtitle has-text-justified">
+                <strong>CADTalk Dataset.</strong> Example shapes from CADTalk (left) along with ground-truth (right) and predicted comments (far right). In
+                these examples, our prediction matches the ground truth, except for the Moai sculpture where CADTalker labeled the “head” code block as
+                “body”. Machine-made shapes are rendered with dark blue and placed behind the human-made shapes rendered with light blue.
+            </h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Links -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3 has-text-centered">Dataset Statistics and Tracks</h2>
+                    <div class="content has-text-justified">
+                        
+                        <h3 class="title is-4">Statistics</h3>
+                        <div class="content has-text-centered">
+                            <p style="font-size: 120%;">
+                                The number of programs, lines of code, and the number of parts are listed.
+                            </p>
+                            <img src="./imgs/stats.png" width="70%" class="" alt="Statistics"/>
+                        </div>
+
+                        <h3 class="title is-4">CADTalk-Cube<sup>L</sup></h3>
+                        <!-- <a href="" target="_blank">download</a> -->
+                        <h3 class="title is-4">CADTalk-Cube<sup>H</sup></h3>
+                        <!-- <a href="" target="_blank">download</a> -->
+                        <h3 class="title is-4">CADTalk-Ellip<sup>L</sup></h3>
+                        <!-- <a href="" target="_blank">download</a> -->
+                        <h3 class="title is-4">CADTalk-Ellip<sup>H</sup></h3>
+                        <!-- <a href="" target="_blank">download</a> -->
+                        <h3 class="title is-4">CADTalk-Real<sup>H</sup></h3>
+                        <!-- <a href="" target="_blank">download</a> <br> -->
+
+                        <h3 class="title is-4">Evaluation</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <div class="content">
+                <h2 class="title">Acknowlegement</h2>
+                <p style="font-size:120%;">
+                  We thank Algot Runeman for his <a href="http://runeman.org/3d/" target="_blank">OpenSCAD programs</a>. 
+                  CJ was supported by a startup grant from the School of Informatics, Bayes Seed funding, and gifts from Google Cloud research credits. 
+                  NM was supported by Marie Skłodowska-Curie grant agreement No. 956585 and UCL AI Centre.
+                </p>
+                <p>
+                    We borrow the source code of this website from  <a
+                    href="https://nerfies.github.io/" target="_blank">Nerfies</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+
+</body>
+</html>
